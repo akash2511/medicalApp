@@ -1,0 +1,53 @@
+{
+  "name": "medical",
+  "version": "1.0.0",
+  "description": "health app",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./server/index.js",
+    "lint": "prettier . --write",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akash2511"
+  },
+  "author": "Akash",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/boom": "^9.1.4",
+    "@hapi/glue": "^8.0.0",
+    "@hapi/good": "^9.0.1",
+    "@hapi/good-console": "^9.0.1",
+    "@hapi/good-squeeze": "^6.0.0",
+    "@hapi/hapi": "^20.2.1",
+    "@hapi/inert": "^6.0.4",
+    "@hapi/vision": "^6.1.0",
+    "bluebird": "^3.7.2",
+    "hapi-swagger": "^14.2.4",
+    "joi": "^17.4.2",
+    "mongoose": "^6.0.12",
+    "nipo": "^0.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.1",
+    "lint-staged": "^12.0.2",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.4.1"
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
