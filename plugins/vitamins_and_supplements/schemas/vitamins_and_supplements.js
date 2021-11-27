@@ -9,47 +9,158 @@ const schema = new Schema(
   {
     name: { type: String, required: true },
     category: { type: String, required: true},
-    serving: { type: String, required: true },
     form: { type: String, required: true },
-    calories: { type: Number, required: true },
-    carbohydrates: { type: Number, required: true },
-    protein: { type: Number, required: true },
-    total_fat:{ type: Number, required: true },
+    serving: {
+      measurement: { type: Number, required: true },
+      unit_of_measurement: { type: String, required: true }
+    },
+    calories: {
+      measurement: { type: Number, required: true },
+      unit_of_measurement: { type: String, required: true }
+    },
+    carbohydrates: {
+      measurement: { type: Number, required: true },
+      unit_of_measurement: { type: String, required: true }
+    },
+    protein: {
+      measurement: { type: Number, required: true },
+      unit_of_measurement: { type: String, required: true }
+    },
+    total_fat:{
+      measurement: { type: Number, required: true },
+      unit_of_measurement: { type: String, required: true }
+    },
     vitamins: {
-        vitaminA: { type: Number, required: false },
-        vitaminB: { type: Number, required: false },
-        vitaminB1: { type: Number, required: false },
-        vitaminB2: { type: Number, required: false },
-        vitaminB3: { type: Number, required: false },
-        vitaminB5: { type: Number, required: false },
-        vitaminB6: { type: Number, required: false }, 
-        vitaminB7: { type: Number, required: false },
-        vitaminB9: { type: Number, required: false },
-        vitaminB12: { type: Number, required: false },
-        vitaminC: { type: Number, required: false },
-        vitaminD: { type: Number, required: false },
-        vitaminE: { type: Number, required: false },
-        vitaminK: { type: Number, required: false },
-        choline: { type: Number, required: false },
-        carnitine: { type: Number, required: false },
+        vitaminA: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        vitaminB: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        vitaminB1: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        vitaminB2: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        vitaminB3: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        vitaminB5: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        vitaminB6: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        vitaminB7: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        vitaminB9: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        vitaminB12: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        vitaminC: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        vitaminD: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        vitaminE: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        vitaminK: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        choline: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        carnitine: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
     },
     minerals: {
-      calcium: { type: Number, required: false },
-      chloride: { type: Number, required: false },
-      chromium: { type: Number, required: false },
-      copper: { type: Number, required: false },
-      fluoride: { type: Number, required: false },
-      iodine: { type: Number, required: false },
-      iron: { type: Number, required: false },
-      magnesium: { type: Number, required: false },
-      manganese: { type: Number, required: false },
-      molybdenum: { type: Number, required: false },
-      phosphorus: { type: Number, required: false },
-      potassium: { type: Number, required: false },
-      selenium: { type: Number, required: false },
-      iodium: { type: Number, required: false },
-      sulphur: { type: Number, required: false },
-      zinc: { type: Number, required: false },
+      calcium: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      chloride: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      chromium: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      copper: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      fluoride: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      iodine: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      iron: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      magnesium: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      manganese: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      molybdenum: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      phosphorus: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      potassium: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      selenium: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      iodium: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      sulphur: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      zinc: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
     },
     verified: { type: Boolean, default: false },
     archive: { type: Boolean, default: false }

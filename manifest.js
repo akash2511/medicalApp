@@ -5,8 +5,18 @@ try {
   const Inert = require('@hapi/inert');
   const Vision = require('@hapi/vision');
   const Good = require('@hapi/good');
+  const hapiAuthorization = require('hapi-authorization');
 
+  const auth = require('./plugins/auth');
   const diet = require('./plugins/diet');
+  const diet_plan = require('./plugins/diet_plan');
+  const emr = require('./plugins/emr');
+  const exercises = require('./plugins/exercises');
+  const medication = require('./plugins/medication');
+  const prescription = require('./plugins/prescription');
+  const profile = require('./plugins/profile');
+  const self_management = require('./plugins/self_management');
+  const users = require('./plugins/users');
   const vitamins_and_supplements = require('./plugins/vitamins_and_supplements');
 
   module.exports = {
@@ -75,7 +85,40 @@ try {
           }
         },
         {
+          plugin: hapiAuthorization,
+          options: {
+              roles: ['SUPERADMIN', 'DOCTOR', 'PATIENT', 'USER']	
+          }
+        },
+        {
+          plugin: auth
+        },
+        {
           plugin: diet
+        },
+        {
+          plugin: diet_plan
+        },
+        {
+          plugin: emr
+        },
+        {
+          plugin: exercises
+        },
+        {
+          plugin: medication
+        },
+        {
+          plugin: profile
+        },
+        {
+          plugin: prescription
+        },
+        {
+          plugin: self_management
+        },
+        {
+          plugin: users
         },
         {
           plugin: vitamins_and_supplements

@@ -8,6 +8,7 @@ exports.plugin = {
     server.route(require('./routes/add_diet'));
     server.route(require('./routes/delete_diet'));
     server.route(require('./routes/edit_diet'));
-    server.route(require('./routes/get_diet'));
+    server.route(require('./routes/get_diet_by_ids'));
+    server.route(require('./routes/get_all_diets'));
   }
 };

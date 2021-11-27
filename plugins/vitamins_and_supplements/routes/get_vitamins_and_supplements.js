@@ -2,7 +2,7 @@
 
 module.exports = {
   method: 'GET',
-  path: '/api/vitamins&supplements/{vitainSupplementId}',
+  path: '/api/vitamins&supplements/ids',
   config: {
     tags: ['api'],
     description: 'Fetches vitamins and supplements',

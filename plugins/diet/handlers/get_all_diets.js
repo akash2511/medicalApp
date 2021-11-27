@@ -3,15 +3,12 @@
 const Boom = require('@hapi/boom');
 const DietModel = require('../schemas/diet')
 module.exports = async (request, h) => {
-  const {
-    params
-  } = request;
   try {
-    const query = {_id: params.dietId}
-    const diet = await DietModel.findOne(query)
+    const query = {archive: false}
+    const diet = await DietModel.find(query)
     return {
       statusCode: 201,
-      message: 'Diet Fetched successfully',
+      message: 'Diets Fetched successfully',
       data: diet
     };
   } catch (e) {

@@ -7,46 +7,148 @@ module.exports = {
   }),
   payload: Joi.object({
     name: Joi.string(),
-    type: Joi.string().valid('breakfast', 'lunch', 'snack', 'dinner'),
-    serving: Joi.string(),
-    calories: Joi.number(),
-    carbohydrates: Joi.number(),
-    dietaryFiber: Joi.number(),
-    sugars: Joi.number(),
-    protein: Joi.number(),
-    total_fat: Joi.number(),
+    type: Joi.array().items(Joi.string()),
+    serving: Joi.object().keys({
+      measurement: Joi.number(),
+      unit_of_measurement: Joi.string(),
+    }),
+    calories: Joi.object().keys({
+      measurement: Joi.number(),
+      unit_of_measurement: Joi.string(),
+    }),
+    carbohydrates: Joi.object().keys({
+      measurement: Joi.number(),
+      unit_of_measurement: Joi.string(),
+    }),
+    dietaryFiber: Joi.object().keys({
+      measurement: Joi.number(),
+      unit_of_measurement: Joi.string(),
+    }),
+    sugars: Joi.object().keys({
+      measurement: Joi.number(),
+      unit_of_measurement: Joi.string(),
+    }),
+    protein: Joi.object().keys({
+      measurement: Joi.number(),
+      unit_of_measurement: Joi.string(),
+    }),
     fats: Joi.object().keys({
-        saturated: Joi.number(),
-        polyunsaturated: Joi.number(),
-        monounsaturated: Joi.number(),
-        trans: Joi.number(),
-        cholestrol: Joi.number(),
+        saturated: Joi.object().keys({
+          measurement: Joi.number(),
+          unit_of_measurement: Joi.string(),
+        }),
+        polyunsaturated: Joi.object().keys({
+          measurement: Joi.number(),
+          unit_of_measurement: Joi.string(),
+        }),
+        monounsaturated: Joi.object().keys({
+          measurement: Joi.number(),
+          unit_of_measurement: Joi.string(),
+        }),
+        trans: Joi.object().keys({
+          measurement: Joi.number(),
+          unit_of_measurement: Joi.string(),
+        }),
+        cholestrol: Joi.object().keys({
+          measurement: Joi.number(),
+          unit_of_measurement: Joi.string(),
+        }),
+        total_fat: Joi.object().keys({
+          measurement: Joi.number(),
+          unit_of_measurement: Joi.string(),
+        }),
     }),
     vitamins: Joi.object().keys({
-        vitaminA: Joi.number(),
-        vitaminB: Joi.number(),
-        vitaminC: Joi.number(),
-        vitaminD: Joi.number(),
-        vitaminE: Joi.number(),
-        vitaminK: Joi.number(),
+        vitaminA: Joi.object().keys({
+          measurement: Joi.number(),
+          unit_of_measurement: Joi.string(),
+        }),
+        vitaminB: Joi.object().keys({
+          measurement: Joi.number(),
+          unit_of_measurement: Joi.string(),
+        }),
+        vitaminC: Joi.object().keys({
+          measurement: Joi.number(),
+          unit_of_measurement: Joi.string(),
+        }),
+        vitaminD: Joi.object().keys({
+          measurement: Joi.number(),
+          unit_of_measurement: Joi.string(),
+        }),
+        vitaminE: Joi.object().keys({
+          measurement: Joi.number(),
+          unit_of_measurement: Joi.string(),
+        }),
+        vitaminK: Joi.object().keys({
+          measurement: Joi.number(),
+          unit_of_measurement: Joi.string(),
+        }),
     }),
     minerals: Joi.object().keys({
-      calcium: Joi.number(),
-      chloride: Joi.number(),
-      chromium: Joi.number(),
-      copper: Joi.number(),
-      fluoride: Joi.number(),
-      iodine: Joi.number(),
-      iron: Joi.number(),
-      magnesium: Joi.number(),
-      manganese: Joi.number(),
-      molybdenum: Joi.number(),
-      phosphorus: Joi.number(),
-      potassium: Joi.number(),
-      selenium: Joi.number(),
-      iodium: Joi.number(),
-      sulphur: Joi.number(),
-      zinc: Joi.number(),
+      calcium: Joi.object().keys({
+        measurement: Joi.number(),
+        unit_of_measurement: Joi.string(),
+      }),
+      chloride: Joi.object().keys({
+        measurement: Joi.number(),
+        unit_of_measurement: Joi.string(),
+      }),
+      chromium: Joi.object().keys({
+        measurement: Joi.number(),
+        unit_of_measurement: Joi.string(),
+      }),
+      copper: Joi.object().keys({
+        measurement: Joi.number(),
+        unit_of_measurement: Joi.string(),
+      }),
+      fluoride: Joi.object().keys({
+        measurement: Joi.number(),
+        unit_of_measurement: Joi.string(),
+      }),
+      iodine: Joi.object().keys({
+        measurement: Joi.number(),
+        unit_of_measurement: Joi.string(),
+      }),
+      iron: Joi.object().keys({
+        measurement: Joi.number(),
+        unit_of_measurement: Joi.string(),
+      }),
+      magnesium: Joi.object().keys({
+        measurement: Joi.number(),
+        unit_of_measurement: Joi.string(),
+      }),
+      manganese: Joi.object().keys({
+        measurement: Joi.number(),
+        unit_of_measurement: Joi.string(),
+      }),
+      molybdenum: Joi.object().keys({
+        measurement: Joi.number(),
+        unit_of_measurement: Joi.string(),
+      }),
+      phosphorus: Joi.object().keys({
+        measurement: Joi.number(),
+        unit_of_measurement: Joi.string(),
+      }),
+      potassium: Joi.object().keys({
+        measurement: Joi.number(),
+        unit_of_measurement: Joi.string(),
+      }),
+      selenium: Joi.object().keys({
+        measurement: Joi.number(),
+        unit_of_measurement: Joi.string(),
+      }),
+      iodium: Joi.object().keys({
+        measurement: Joi.number(),
+        unit_of_measurement: Joi.string(),
+      }),
+      sulphur: Joi.object().keys({
+        measurement: Joi.number(),
+        unit_of_measurement: Joi.string(),
+      }),
+      zinc: Joi.object().keys({
+        measurement: Joi.number(),
+        unit_of_measurement: Joi.string(),
+      }),
     })
   })
 };

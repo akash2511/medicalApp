@@ -9,46 +9,148 @@ const type = ['breakfast', 'lunch', 'snack', 'dinner'];
 const schema = new Schema(
   {
     name: { type: String, required: true },
-    type: { type: String, enum: type },
-    serving: { type: String, required: true },
-    calories: { type: Number, required: true },
-    carbohydrates: { type: Number, required: true },
-    dietaryFiber: { type: Number, required: true },
-    sugars: { type: Number, required: true },
-    protein: { type: Number, required: true },
-    total_fat:{ type: Number, required: true },
+    type: [{ type: String, enum: type }],
+    serving: {
+      measurement: { type: Number, required: true },
+      unit_of_measurement: { type: String, required: true }
+    },
+    calories: {
+      measurement: { type: Number, required: true },
+      unit_of_measurement: { type: String, required: true }
+    },
+    carbohydrates: {
+      measurement: { type: Number, required: true },
+      unit_of_measurement: { type: String, required: true }
+    },
+    dietaryFiber: {
+      measurement: { type: Number, required: true },
+      unit_of_measurement: { type: String, required: true }
+    },
+    sugars: {
+      measurement: { type: Number, required: true },
+      unit_of_measurement: { type: String, required: true }
+    },
+    protein: {
+      measurement: { type: Number, required: true },
+      unit_of_measurement: { type: String, required: true }
+    },
     fats: {
-        saturated: { type: Number, required: true },
-        polyunsaturated: { type: Number, required: true },
-        monounsaturated: { type: Number, required: true },
-        trans: { type: Number, required: true },
-        cholestrol: { type: Number, required: true },
+        saturated: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        polyunsaturated: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        monounsaturated: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        trans: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        cholestrol: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        total_fat: {
+          measurement: { type: Number, required: true },
+          unit_of_measurement: { type: String, required: true }
+        }
     },
     vitamins: {
-        vitaminA: { type: Number, required: false },
-        vitaminB: { type: Number, required: false },
-        vitaminC: { type: Number, required: false },
-        vitaminD: { type: Number, required: false },
-        vitaminE: { type: Number, required: false },
-        vitaminK: { type: Number, required: false },
+        vitaminA: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        vitaminB: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        vitaminC: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        vitaminD: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        vitaminE: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
+        vitaminK: {
+          measurement: { type: Number, required: false },
+          unit_of_measurement: { type: String, required: false }
+        },
     },
     minerals: {
-      calcium: { type: Number, required: false },
-      chloride: { type: Number, required: false },
-      chromium: { type: Number, required: false },
-      copper: { type: Number, required: false },
-      fluoride: { type: Number, required: false },
-      iodine: { type: Number, required: false },
-      iron: { type: Number, required: false },
-      magnesium: { type: Number, required: false },
-      manganese: { type: Number, required: false },
-      molybdenum: { type: Number, required: false },
-      phosphorus: { type: Number, required: false },
-      potassium: { type: Number, required: false },
-      selenium: { type: Number, required: false },
-      iodium: { type: Number, required: false },
-      sulphur: { type: Number, required: false },
-      zinc: { type: Number, required: false },
+      calcium: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      chloride: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      chromium: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      copper: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      fluoride: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      iodine: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      iron: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      magnesium: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      manganese: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      molybdenum: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      phosphorus: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      potassium: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      selenium: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      iodium: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      sulphur: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
+      zinc: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      }
     },
     verified: { type: Boolean, default: false },
     archive: { type: Boolean, default: false }
