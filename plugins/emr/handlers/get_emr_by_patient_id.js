@@ -27,7 +27,7 @@ module.exports = async (request, h) => {
       message: `Emr fetched successfully`,
       data: {
         emr,
-        prescription,
+        prescription: last_prescription,
         medication,
         diet_plan,
         diets,
