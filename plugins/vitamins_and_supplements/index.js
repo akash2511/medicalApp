@@ -10,5 +10,7 @@ exports.plugin = {
     server.route(require('./routes/edit_vitamins_and_supplements'));
     server.route(require('./routes/get_vitamins_and_supplements'));
     server.route(require('./routes/get_all_vitamins_and_supplements'));
+    // methods
+    server.method(require('./methods/check_supplements'));
   }
 };

@@ -87,7 +87,7 @@ try {
         {
           plugin: hapiAuthorization,
           options: {
-              roles: ['SUPERADMIN', 'DOCTOR', 'PATIENT', 'USER']	
+              roles: ['superAdmin', 'doctor', 'patient', 'user']	
           }
         },
         {

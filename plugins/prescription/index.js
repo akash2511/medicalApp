@@ -8,5 +8,7 @@ exports.plugin = {
     server.route(require('./routes/add_prescription'));
     server.route(require('./routes/delete_prescription'));
     server.route(require('./routes/get_prescription_by_ids'));
+    // methods
+    server.method(require('./methods/check_prescription'));
   }
 };

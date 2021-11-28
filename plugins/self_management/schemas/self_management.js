@@ -8,7 +8,7 @@ const { Schema } = mongoose;
 const schema = new Schema(
   {
     type: { type: String, required: true },
-    exercise: [{ type: String, required: true }],
+    exercises: [{ type: String, required: true }],
     sleep_in_min: { type: Number, required: true },
     archive: { type: Boolean, default: false },
   },

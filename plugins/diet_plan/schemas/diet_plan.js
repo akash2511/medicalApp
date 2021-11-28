@@ -8,7 +8,7 @@ const { Schema } = mongoose;
 const schema = new Schema(
   {
     type: { type: String, required: true },
-    diet: [
+    diets: [
       {
         diet_id: { type: String, required: true },
         servings: {

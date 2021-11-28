@@ -10,5 +10,7 @@ exports.plugin = {
     server.route(require('./routes/edit_exercise'));
     server.route(require('./routes/get_all_exercises'));
     server.route(require('./routes/get_exercise_by_ids'));
+    // methods
+    server.method(require('./methods/check_exercise'));
   }
 };

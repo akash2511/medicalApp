@@ -10,5 +10,7 @@ exports.plugin = {
     server.route(require('./routes/edit_diet'));
     server.route(require('./routes/get_diet_by_ids'));
     server.route(require('./routes/get_all_diets'));
+    // methods
+    server.method(require('./methods/check_diet_plan'));
   }
 };

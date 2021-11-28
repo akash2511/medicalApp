@@ -15,6 +15,7 @@ const schema = new Schema(
     description: { type: String, required: false },
     diet_plan_id: { type: String, required: true },
     self_management_id: { type: String, required: true },
+    archive: { type: Boolean, default: false },
   },
   { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' } }
 );

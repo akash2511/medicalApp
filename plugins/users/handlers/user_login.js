@@ -38,6 +38,7 @@ module.exports = async (request, h) => {
     return {
       statusCode: 201,
       message: 'User Logged in Successfully',
+      jwt: token,
       _id: user._id,
       name: user.name,
       user_type: user.user_type,

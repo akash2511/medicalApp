@@ -6,7 +6,12 @@ module.exports = {
   options: {
     tags: ['api'],
     description: 'Add Users',
-    auth: false,
+    auth: 'jwt',
+    plugins: {
+      hapiAuthorization: {
+        roles: ['superAdmin', 'user']
+      }
+    },
     validate: require('../validations/add_user')
   },
   handler: require('../handlers/add_user')

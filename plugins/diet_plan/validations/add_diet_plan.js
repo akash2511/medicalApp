@@ -5,7 +5,7 @@ const Joi = require('joi');
 module.exports = {
   payload: Joi.object({
     type: Joi.string().required(),
-    diet: Joi.array().items(Joi.object().keys({
+    diets: Joi.array().items(Joi.object().keys({
       diet_id: Joi.string().required(),
       servings: Joi.object().keys({
         measurement: Joi.number().required(),
