@@ -9,7 +9,7 @@ module.exports = {
     auth: 'jwt',
     plugins: {
       hapiAuthorization: {
-        roles: ['superAdmin']
+        roles: ['superAdmin', 'user']
       }
     },
     validate: require('../validations/get_profile_by_ids')

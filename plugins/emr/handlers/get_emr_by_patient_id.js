@@ -9,8 +9,12 @@ module.exports = async (request, h) => {
   try {
 
     const emr = await EmrModel.findOne({patient_id: patientId, archive: false});
-    const [prescription] = await server.methods.check_prescription(emr.prescription_ids);
-    const medication = await server.methods.check_medication(prescription.medication_id);
+    const prescriptions = await server.methods.check_prescription(emr.prescription_ids);
+    prescriptions.sort((a, b)=> {
+      new Date(a.created_at) - new Date(b.created_at)
+    })
+    const last_prescription = prescriptions[prescriptions.length - 1];
+    const medication = await server.methods.check_medication(last_prescription.medication_id);
     const diet_plan = await server.methods.check_diet_plan(medication.diet_plan_id);
     const diet_ids = diet_plan.diets.map(diet=>diet.diet_id);
     const supplement_ids = diet_plan.supplements;
