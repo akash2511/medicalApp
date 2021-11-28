@@ -5,7 +5,7 @@ const Boom = require('@hapi/boom');
 
 module.exports = async (request, h) => {
   try {
-    const medications = await medicationModel.find({archive: false});
+    const medications = await MedicationModel.find({archive: false});
 
     return {
       statusCode: 201,

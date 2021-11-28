@@ -8,7 +8,7 @@ module.exports = async (request, h) => {
   const { patientId } = params
   try {
 
-    const emr = await EmrModel.findOne({_id: patientId, archive: false});
+    const emr = await EmrModel.findOne({patient_id: patientId, archive: false});
     const [prescription] = await server.methods.check_prescription(emr.prescription_ids);
     const medication = await server.methods.check_medication(prescription.medication_id);
     const diet_plan = await server.methods.check_diet_plan(medication.diet_plan_id);
