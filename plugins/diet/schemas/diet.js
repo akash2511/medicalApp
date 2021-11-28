@@ -91,6 +91,10 @@ const schema = new Schema(
         measurement: { type: Number, required: false },
         unit_of_measurement: { type: String, required: false }
       },
+      sodium: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      },
       chloride: {
         measurement: { type: Number, required: false },
         unit_of_measurement: { type: String, required: false }

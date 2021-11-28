@@ -86,6 +86,10 @@ module.exports = {
         measurement: Joi.number(),
         unit_of_measurement: Joi.string(),
       }),
+      sodium: Joi.object().keys({
+        measurement: Joi.number(),
+        unit_of_measurement: Joi.string(),
+      }),
       chloride: Joi.object().keys({
         measurement: Joi.number(),
         unit_of_measurement: Joi.string(),
