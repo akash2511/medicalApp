@@ -161,6 +161,10 @@ const schema = new Schema(
         measurement: { type: Number, required: false },
         unit_of_measurement: { type: String, required: false }
       },
+      boron: {
+        measurement: { type: Number, required: false },
+        unit_of_measurement: { type: String, required: false }
+      }
     },
     verified: { type: Boolean, default: false },
     archive: { type: Boolean, default: false }

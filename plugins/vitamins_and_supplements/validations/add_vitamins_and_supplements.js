@@ -157,6 +157,10 @@ module.exports = {
         measurement: Joi.number(),
         unit_of_measurement: Joi.string(),
       }),
+      boron: Joi.object().keys({
+        measurement: Joi.number(),
+        unit_of_measurement: Joi.string(),
+      })
     })
   })
 };
