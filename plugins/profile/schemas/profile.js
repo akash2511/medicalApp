@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
 const { Schema } = mongoose;
-
+const smoke_drink_enum = ['occasionally', 'regularly', 'no']
 const schema = new Schema(
   {
     first_name: { type: String, required: true },
@@ -14,6 +14,20 @@ const schema = new Schema(
     dob: { type: String, required: true },
     emr: { type: Array, required: false },
     doctor_id: { type: String, required: false },
+    height: [{
+      _id: false,
+      measurement: { type: Number, required: false },
+      unit_of_measurement: { type: String, required: false },
+      date: { type: Date, required: false },
+    }],
+    weight: [{
+      _id: false,
+      measurement: { type: Number, required: false },
+      unit_of_measurement: { type: String, required: false },
+      date: { type: Date, required: false },
+    }],
+    do_you_smoke: { type: String, enum: smoke_drink_enum, required: false },
+    do_you_drink: { type: String, enum: smoke_drink_enum, required: false },
     archive: { type: Boolean, default: false },
   },
   { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' } }
