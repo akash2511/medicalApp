@@ -20,7 +20,7 @@ module.exports = {
       id: Joi.string(),
       quantity: Joi.number()
     })),
-    hydartion_in_litres: Joi.string(),
+    hydartion_in_litres: Joi.number(),
     date: Joi.date().required()
   })
 };
