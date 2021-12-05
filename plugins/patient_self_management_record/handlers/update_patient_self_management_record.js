@@ -14,7 +14,7 @@ module.exports = async (request, h) => {
         $set: {sleep_in_min}
     }
     const options = { useFindAndModify: false, new: true};
-    const record = await MealRecordModel.findOneAndUpdate(filter, update, options);
+    const record = await SelfManagementRecordModel.findOneAndUpdate(filter, update, options);
     return {
       statusCode: 200,
       message: `Patient self management record created successfully`,

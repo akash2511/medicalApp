@@ -6,8 +6,8 @@ const Boom = require('@hapi/boom');
 module.exports = async (request, h) => {
   const { payload, auth: {credentials} } = request;
   try {
-    patient_id = credentials.profile_id
-    create_object = Object.assign({}, payload, {date: new Date(payload.date), patient_id})
+    let patient_id = credentials.profile_id
+    let create_object = Object.assign({}, payload, {date: new Date(payload.date), patient_id})
     const record = await SelfManagementRecordModel.create(create_object);
     return {
       statusCode: 201,
