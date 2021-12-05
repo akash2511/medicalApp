@@ -4,10 +4,9 @@ const SelfManagementRecordModel = require('../schemas/patient_self_management_re
 const Boom = require('@hapi/boom');
 
 module.exports = async (request, h) => {
-  const { payload, auth: {credentials} } = request;
+  const { params } = request;
   try {
-    const date = new Date(payload.date)
-    const filter = {patient_id: credentials.profile_id, date: date};
+    const filter = {_id: params.id};
     const update = { 
         archive: true
     }

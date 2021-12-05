@@ -2,7 +2,7 @@
 
 module.exports = {
   method: 'PUT',
-  path: '/api/patient-self-management-record',
+  path: '/api/patient-self-management-record/{id}',
   options: {
     tags: ['api'],
     description: 'Updates a patient self management record',

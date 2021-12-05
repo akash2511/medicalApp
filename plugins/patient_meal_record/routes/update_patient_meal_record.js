@@ -2,7 +2,7 @@
 
 module.exports = {
   method: 'PUT',
-  path: '/api/patient-meal-record',
+  path: '/api/patient-meal-record/{id}',
   options: {
     tags: ['api'],
     description: 'Updates a patient meal record',

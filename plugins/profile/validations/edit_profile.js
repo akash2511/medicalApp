@@ -24,6 +24,7 @@ module.exports = {
       unit_of_measurement: Joi.string(),
       date: Joi.date()
     }),
+    questionaire_shown: Joi.boolean(),
     emr: Joi.array().items(Joi.string()),
     doctor_id: Joi.string()
   })

@@ -2,7 +2,7 @@
 
 module.exports = {
   method: 'DELETE',
-  path: '/api/patient-meal-record/{date}',
+  path: '/api/patient-meal-record/{id}',
   options: {
     tags: ['api'],
     description: 'Deletes a patient meal record',
