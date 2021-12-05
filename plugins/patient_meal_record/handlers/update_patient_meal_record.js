@@ -5,7 +5,11 @@ const Boom = require('@hapi/boom');
 
 module.exports = async (request, h) => {
   const { params, payload } = request;
-  const { breakfast, lunch, snack, dinner, hydartion_in_litres} = payload;
+  let { breakfast, lunch, snack, dinner, hydartion_in_litres} = payload;
+  breakfast = breakfast ? breakfast: [];
+  lunch = lunch ? lunch: [];
+  snack = snack ? snack: [];
+  dinner = dinner ? dinner: [];
   try {
     const filter = {_id: params.id, archive: false};
     const update = { 

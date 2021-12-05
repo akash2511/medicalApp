@@ -5,7 +5,8 @@ const Boom = require('@hapi/boom');
 
 module.exports = async (request, h) => {
   const { params, payload } = request;
-  const { exercise, sleep_in_min } = payload;
+  let { exercise, sleep_in_min } = payload;
+  exercise = exercise? exercise: [];
   try {
     const filter = {_id: params.id, archive: false};
     const update = { 
