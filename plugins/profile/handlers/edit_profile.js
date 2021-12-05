@@ -6,9 +6,17 @@ const Boom = require('@hapi/boom');
 module.exports = async (request, h) => {
   const { params, payload } = request;
   const { id } = params;
+  const {height, weight, ...rest_object} = payload;
+  console.log(weight)
+  
   try {
+    const filter = { _id: id };
+    const update = {
+      $set: rest_object,
+      $push: { weight, height}
+    }
     const options = { useFindAndModify: false, new: true };
-    const profile = await ProfileModel.findOneAndUpdate({ _id: id }, payload, options);
+    const profile = await ProfileModel.findOneAndUpdate(filter, update, options);
 
     return {
       statusCode: 201,

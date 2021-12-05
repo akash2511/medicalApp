@@ -12,6 +12,18 @@ module.exports = {
     last_name: Joi.string(),
     profile_pic: Joi.string(),
     dob: Joi.string(),
+    do_you_smoke: Joi.string(),
+    do_you_drink: Joi.string(),
+    height: Joi.object().keys({
+      measurement: Joi.number(),
+      unit_of_measurement: Joi.string(),
+      date: Joi.date()
+    }),
+    weight: Joi.object().keys({
+      measurement: Joi.number(),
+      unit_of_measurement: Joi.string(),
+      date: Joi.date()
+    }),
     emr: Joi.array().items(Joi.string()),
     doctor_id: Joi.string()
   })

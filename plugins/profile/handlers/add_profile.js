@@ -5,9 +5,13 @@ const Boom = require('@hapi/boom');
 
 module.exports = async (request, h) => {
   const { payload } = request;
+  const {height, weight, ...rest_object} = payload;
   try {
-
-    const profile = await ProfileModel.create(payload);
+    const update = {
+      $set: rest_object,
+      $push: { weight, height}
+    }
+    const profile = await ProfileModel.create(update);
     if (!profile) throw 'Profile creation failed';
 
     return {

@@ -18,7 +18,8 @@ try {
   const self_management = require('./plugins/self_management');
   const users = require('./plugins/users');
   const vitamins_and_supplements = require('./plugins/vitamins_and_supplements');
-
+  const patient_meal_record = require('./plugins/patient_meal_record');
+  const patient_self_management_record = require('./plugins/patient_self_management_record');
   module.exports = {
     server: {
       port: process.env.PORT || 3004,
@@ -122,6 +123,12 @@ try {
         },
         {
           plugin: vitamins_and_supplements
+        },
+        {
+          plugin: patient_meal_record
+        },
+        {
+          plugin: patient_self_management_record
         }
       ]
     }
