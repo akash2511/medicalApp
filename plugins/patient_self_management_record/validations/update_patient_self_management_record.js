@@ -12,6 +12,6 @@ module.exports = {
       duration_in_min: Joi.number()
     })),
     sleep_in_min: Joi.number(),
-    date: Joi.date().required()
+    date: Joi.date()
   })
 };
