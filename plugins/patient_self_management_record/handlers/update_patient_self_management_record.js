@@ -11,7 +11,7 @@ module.exports = async (request, h) => {
     const filter = {patient_id: credentials.profile_id, date: date, archive: false};
     const update = { 
         $push: { exercise: { $each: exercise}},
-        $inc: { sleep_in_min: sleep_in_min}
+        sleep_in_min
     }
     const options = { useFindAndModify: false, new: true};
     const record = await MealRecordModel.findOneAndUpdate(filter, update, options);
