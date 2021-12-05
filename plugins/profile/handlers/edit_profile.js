@@ -7,8 +7,7 @@ module.exports = async (request, h) => {
   const { params, payload } = request;
   const { id } = params;
   const {height, weight, ...rest_object} = payload;
-  console.log(weight)
-  
+
   try {
     const filter = { _id: id };
     const update = {

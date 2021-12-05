@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node ./server/index.js",
-    "lint": "prettier . --write",
-    "prepare": "husky install"
+    "lint": "prettier . --write"
   },
   "repository": {
     "type": "git",
@@ -52,10 +51,5 @@
       "prettier --write",
       "eslint --fix"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }

@@ -1,8 +1,12 @@
 'use strict';
 
+const { required } = require('joi');
 const Joi = require('joi');
 
 module.exports = {
+  params: Joi.object({
+    id: Joi.string().required()
+  }),
   payload: Joi.object({
     breakfast: Joi.array().items(Joi.object().keys({
       id: Joi.string(),
@@ -21,6 +25,5 @@ module.exports = {
       quantity: Joi.number()
     })),
     hydartion_in_litres: Joi.string(),
-    date: Joi.date().required()
   })
 };

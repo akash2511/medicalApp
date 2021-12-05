@@ -28,6 +28,7 @@ const schema = new Schema(
     }],
     do_you_smoke: { type: String, enum: smoke_drink_enum, required: false },
     do_you_drink: { type: String, enum: smoke_drink_enum, required: false },
+    questionaire_shown: { type: Boolean, default: false },
     archive: { type: Boolean, default: false },
   },
   { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' } }
