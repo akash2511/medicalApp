@@ -16,7 +16,7 @@ module.exports = async (request, h) => {
             snack: { $each: snack},
             dinner: { $each: dinner},
         },
-        $inc: { hydartion_in_litres: hydartion_in_litres}
+        $set: {hydartion_in_litres}
     }
     const options = { useFindAndModify: false, new: true};
     const record = await MealRecordModel.findOneAndUpdate(filter, update, options);
