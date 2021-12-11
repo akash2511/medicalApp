@@ -8,7 +8,7 @@ module.exports = async (request, h) => {
   const ids = Array.isArray(query.ids) ? query.ids : [query.ids];
   try {
 
-    const self_management = await SelfManagementModel.find({_id: {$in: ids}});
+    const self_management = await SelfManagementModel.find({_id: {$in: ids}, archive: false});
 
     return {
       statusCode: 201,

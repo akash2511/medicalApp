@@ -13,7 +13,7 @@ module.exports = async (request, h) => {
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(payload.newpassword, salt);
 
-    const user = await User.findOne({ _id: credentials.id });
+    const user = await User.findOne({ _id: credentials.id, archive: false });
     if (!user) {
       return Boom.badRequest('Invalid user');
     }

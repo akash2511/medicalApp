@@ -8,7 +8,7 @@ module.exports = async (request, h) => {
   const ids = Array.isArray(query.ids) ? query.ids : [query.ids];
   try {
 
-    const diet_plan = await DietPlanModel.find({_id: {$in: ids}});
+    const diet_plan = await DietPlanModel.find({_id: {$in: ids}, archive: false});
 
     return {
       statusCode: 201,

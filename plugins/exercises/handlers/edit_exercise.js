@@ -8,7 +8,7 @@ module.exports = async (request, h) => {
   const { id } = params;
   try {
     const options = { useFindAndModify: false, new: true };
-    const exercise = await ExerciseModel.findOneAndUpdate({ _id: id }, payload, options);;
+    const exercise = await ExerciseModel.findOneAndUpdate({ _id: id, archive: false }, payload, options);;
 
     return {
       statusCode: 201,

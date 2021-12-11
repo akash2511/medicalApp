@@ -1,6 +1,5 @@
 'use strict';
 
-const { required } = require('joi');
 const Joi = require('joi');
 
 module.exports = {
@@ -24,6 +23,6 @@ module.exports = {
       id: Joi.string(),
       quantity: Joi.number()
     })),
-    hydartion_in_litres: Joi.number(),
+    hydartion_in_litres: Joi.number()
   })
 };

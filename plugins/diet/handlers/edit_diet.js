@@ -8,7 +8,7 @@ module.exports = async (request, h) => {
     payload
   } = request;
   try {
-    const query = {_id: params.dietId}
+    const query = {_id: params.dietId, archive: false}
     const options = { new: true }
     const diet = await DietModel.findOneAndUpdate(query, payload, options)
     return {

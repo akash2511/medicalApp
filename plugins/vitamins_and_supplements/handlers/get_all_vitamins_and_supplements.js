@@ -7,8 +7,8 @@ module.exports = async (request, h) => {
     params
   } = request;
   try {
-    const query = {archive: false}
-    const vitamins_and_supplements = await VitaminAndSupplementsModel.find(query)
+    const filter = {archive: false}
+    const vitamins_and_supplements = await VitaminAndSupplementsModel.find(filter)
     return {
       statusCode: 201,
       message: 'vitamins and supplements fetched successfully',

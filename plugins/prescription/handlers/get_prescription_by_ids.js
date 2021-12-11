@@ -8,7 +8,7 @@ module.exports = async (request, h) => {
   const ids = Array.isArray(query.ids) ? query.ids : [query.ids];
   try {
 
-    const prescription = await PrescriptionModel.find({_id: {$in: ids}})
+    const prescription = await PrescriptionModel.find({_id: {$in: ids}, archive: false})
     return {
       statusCode: 201,
       message: `prescription fetched successfully`,

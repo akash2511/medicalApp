@@ -29,7 +29,7 @@ module.exports = async (request, h) => {
       $set: { password: hash }
     };
 
-    const result = await User.findOneAndUpdate({ _id: profile_id }, update, options);
+    const result = await User.findOneAndUpdate({ _id: profile_id, archive: false }, update, options);
 
     if (!result) {
       return Boom.badRequest('Something went during reset password!');

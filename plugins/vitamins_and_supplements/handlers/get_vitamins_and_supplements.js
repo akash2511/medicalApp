@@ -6,7 +6,7 @@ module.exports = async (request, h) => {
   const { query } = request;
   const ids = Array.isArray(query.ids) ? query.ids : [query.ids];
   try {
-    const vitamins_and_supplements = await VitaminAndSupplementsModel.find({_id: {$in: ids}})
+    const vitamins_and_supplements = await VitaminAndSupplementsModel.find({_id: {$in: ids},archive: false})
     return {
       statusCode: 201,
       message: 'vitamins and supplements fetched successfully',

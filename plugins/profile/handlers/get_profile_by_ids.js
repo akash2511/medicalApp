@@ -7,7 +7,7 @@ module.exports = async (request, h) => {
   const { query } = request;
   const ids = Array.isArray(query.ids) ? query.ids : [query.ids];
   try {
-    const profile = await ProfileModel.find({ _id: {$in: ids} });
+    const profile = await ProfileModel.find({ _id: {$in: ids}, archive: false });
 
     return {
       statusCode: 200,

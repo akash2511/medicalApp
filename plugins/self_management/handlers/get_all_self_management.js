@@ -6,7 +6,7 @@ const Boom = require('@hapi/boom');
 module.exports = async (request, h) => {
   try {
 
-    const self_management = await SelfManagementModel.find({});
+    const self_management = await SelfManagementModel.find({archive: false});
 
     return {
       statusCode: 201,

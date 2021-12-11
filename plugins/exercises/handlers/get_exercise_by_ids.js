@@ -7,7 +7,7 @@ module.exports = async (request, h) => {
   const { query } = request;
   const ids = Array.isArray(query.ids) ? query.ids : [query.ids];
   try {
-    const exercise = await ExerciseModel.findOne({ _id: {$in: ids}});;
+    const exercise = await ExerciseModel.findOne({ _id: {$in: ids}, archive: false });;
 
     return {
       statusCode: 200,

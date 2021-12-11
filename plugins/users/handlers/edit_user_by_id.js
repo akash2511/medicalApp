@@ -10,7 +10,7 @@ module.exports = async (request, h) => {
     auth: { credentials }
   } = request;
   try {
-    const user = await User.findOne({ _id: params._id });
+    const user = await User.findOne({ _id: params._id, archive: false });
 
     if (!user) {
       return Boom.badRequest('Invalid user');

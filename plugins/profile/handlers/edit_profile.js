@@ -9,7 +9,7 @@ module.exports = async (request, h) => {
   const {height, weight, ...rest_object} = payload;
 
   try {
-    const filter = { _id: id };
+    const filter = { _id: id, archive: false };
     const update = {
       $set: rest_object,
       $push: { weight, height}

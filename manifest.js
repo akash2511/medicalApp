@@ -20,6 +20,10 @@ try {
   const vitamins_and_supplements = require('./plugins/vitamins_and_supplements');
   const patient_meal_record = require('./plugins/patient_meal_record');
   const patient_self_management_record = require('./plugins/patient_self_management_record');
+  const survey = require('./plugins/survey');
+  const survey_questions = require('./plugins/survey_questions');
+  const survey_submissions = require('./plugins/survey_submissions');
+
   module.exports = {
     server: {
       port: process.env.PORT || 3004,
@@ -129,6 +133,15 @@ try {
         },
         {
           plugin: patient_self_management_record
+        },
+        {
+          plugin: survey
+        },
+        {
+          plugin: survey_questions
+        },
+        {
+          plugin: survey_submissions
         }
       ]
     }

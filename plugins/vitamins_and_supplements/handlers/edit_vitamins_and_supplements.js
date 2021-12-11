@@ -8,9 +8,9 @@ module.exports = async (request, h) => {
     payload
   } = request;
   try {
-    const query = {_id: params.vitainSupplementId}
+    const filter = {_id: params.vitainSupplementId, archive: false}
     const options = { new: true }  
-    const vitamins_and_supplements = await VitaminAndSupplementsModel.findOneAndUpdate(query, payload, options)
+    const vitamins_and_supplements = await VitaminAndSupplementsModel.findOneAndUpdate(filter, payload, options)
     return {
       statusCode: 201,
       message: 'vitamins and supplements edited successfully',

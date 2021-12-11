@@ -6,7 +6,7 @@ const Boom = require('@hapi/boom');
 module.exports = async (request, h) => {
   try {
 
-    const diet_plan = await DietPlanModel.find({});
+    const diet_plan = await DietPlanModel.find({ archive: false });
 
     return {
       statusCode: 201,
