@@ -7,7 +7,7 @@ module.exports = async (request, h) => {
   const { params } = request;
   try {
     const filter = { archive: false };
-    const surveys = await SurveyModel.findOne(filter);
+    const surveys = await SurveyModel.find(filter);
 
     return {
       statusCode: 201,
