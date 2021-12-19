@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
 const { Schema } = mongoose;
-const type = ['breakfast', 'lunch', 'snack', 'dinner'];
+const type = ['breakfast', 'lunch', 'snack', 'dinner', 'liquid'];
 
 const schema = new Schema(
   {
@@ -18,6 +18,7 @@ const schema = new Schema(
       measurement: { type: Number, required: true },
       unit_of_measurement: { type: String, required: true }
     },
+    gi: { type: Number, required: false },
     carbohydrates: {
       measurement: { type: Number, required: true },
       unit_of_measurement: { type: String, required: true }

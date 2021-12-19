@@ -16,6 +16,7 @@ const schema = new Schema(
       {
         title: { type: String, required: false },
         weightage: { type: Number,  default: 0 },
+        sub_question: { type: String, required: false }
       }
     ],
     weightage: { type: Number, default: 0 },

@@ -6,6 +6,7 @@ exports.plugin = {
   register: (server, options) => {
     // routes
     server.route(require('./routes/add_survey_question'));
+    server.route(require('./routes/add_survey_questions_csv'));
     server.route(require('./routes/delete_survey_question'));
     server.route(require('./routes/edit_survey_question'));
     server.route(require('./routes/get_survey_question_by_id'));

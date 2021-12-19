@@ -13,6 +13,7 @@ module.exports = {
       measurement: Joi.number().required(),
       unit_of_measurement: Joi.string().required(),
     }),
+    gi: Joi.string(),
     carbohydrates: Joi.object().keys({
       measurement: Joi.number().required(),
       unit_of_measurement: Joi.string().required(),

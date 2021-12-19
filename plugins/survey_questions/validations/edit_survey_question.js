@@ -14,7 +14,8 @@ module.exports = {
     type: Joi.string(),
     answers: Joi.array().items(Joi.object().keys({
       title: Joi.string(),
-      weightage: Joi.number()
+      weightage: Joi.number(),
+      sub_question: Joi.string()
     })),
     weightage: Joi.number()
   })

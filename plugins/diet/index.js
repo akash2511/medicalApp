@@ -6,6 +6,7 @@ exports.plugin = {
   register: (server, options) => {
     // routes
     server.route(require('./routes/add_diet'));
+    server.route(require('./routes/add_diet_csv'));
     server.route(require('./routes/delete_diet'));
     server.route(require('./routes/edit_diet'));
     server.route(require('./routes/get_diet_by_ids'));
