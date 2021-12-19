@@ -17,6 +17,7 @@ module.exports = {
       weightage: Joi.number(),
       sub_question: Joi.string()
     })),
+    score_category: Joi.string(),
     weightage: Joi.number()
   })
 };

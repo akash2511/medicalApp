@@ -8,12 +8,13 @@ module.exports = async (request, h) => {
   const { payload } = request;
   try {
     const csv_data = await csv_to_json(payload.path)
+    console.log(csv_data)
     const surveyquestions = await SurveyQuestionModel.create(csv_data);
 
     return {
       statusCode: 201,
       message: `Survey questions added successfully`,
-      data: surveyquestion
+      data: surveyquestions
     };
   } catch (e) {
     return Boom.badRequest(e);

@@ -19,6 +19,7 @@ const schema = new Schema(
         sub_question: { type: String, required: false }
       }
     ],
+    score_category: { type: String, required: false },
     weightage: { type: Number, default: 0 },
     archive: { type: Boolean, default: false },
   },
