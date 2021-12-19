@@ -2,7 +2,7 @@
 
 module.exports = {
   method: 'POST',
-  path: '/api/csv',
+  path: '/api/diet/csv',
   config: {
     tags: ['api'],
     description: 'Adds diet by csv',
