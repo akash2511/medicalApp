@@ -5,11 +5,8 @@ const Boom = require('@hapi/boom');
 
 module.exports = async (request, h) => {
   const { params, payload } = request;
-  let { breakfast, lunch, snack, dinner, hydartion_in_litres} = payload;
-  breakfast = breakfast ? breakfast: [];
-  lunch = lunch ? lunch: [];
-  snack = snack ? snack: [];
-  dinner = dinner ? dinner: [];
+  let { breakfast, lunch, snack, dinner, hydartion_in_litres, supplements} = payload;
+
   try {
     const filter = {_id: params.id, archive: false};
     const update = { 
@@ -17,6 +14,7 @@ module.exports = async (request, h) => {
       lunch,
       snack,
       dinner,
+      supplements,
       hydartion_in_litres
     }
     const options = { useFindAndModify: false, new: true};
