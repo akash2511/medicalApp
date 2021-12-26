@@ -15,29 +15,29 @@ module.exports = async (request, h) => {
     meal_records_filtered.forEach(meal_record => {
       graph_object[`${moment(meal_record.date).format('YYYY/MM/DD')}`] = {calories_intake: 0};
       if (meal_record.breakfast) meal_record.breakfast.forEach(item => diet_ids.push(item.id));
-      if (meal_record.lunch) meal_record.breakfast.forEach(item => diet_ids.push(item.id));
-      if (meal_record.snack) meal_record.breakfast.forEach(item => diet_ids.push(item.id));
-      if (meal_record.dinner) meal_record.breakfast.forEach(item => diet_ids.push(item.id));
+      if (meal_record.lunch) meal_record.lunch.forEach(item => diet_ids.push(item.id));
+      if (meal_record.snack) meal_record.snack.forEach(item => diet_ids.push(item.id));
+      if (meal_record.dinner) meal_record.dinner.forEach(item => diet_ids.push(item.id));
     })
     const diets = await server.methods.check_diet(diet_ids);
     const diets_by_id = getByField({data: diets});
     meal_records_filtered.forEach(meal_record => {
-      if (meal_record.breakfast){
+      if (meal_record.breakfast && meal_record.breakfast.length > 0){
         meal_record.breakfast.forEach(item => {
           graph_object[`${moment(meal_record.date).format('YYYY/MM/DD')}`]['calories_intake'] += (item.quantity * diets_by_id[item.id]['calories']['measurement']) / diets_by_id[item.id]['serving']['measurement'];
         })
       }
-      if (meal_record.lunch){
+      if (meal_record.lunch && meal_record.lunch.length > 0){
         meal_record.lunch.forEach(item => {
           graph_object[`${moment(meal_record.date).format('YYYY/MM/DD')}`]['calories_intake'] += (item.quantity * diets_by_id[item.id]['calories']['measurement']) / diets_by_id[item.id]['serving']['measurement'];
         })
       }
-      if (meal_record.snack){
+      if (meal_record.snack && meal_record.snack.length > 0){
         meal_record.snack.forEach(item => {
           graph_object[`${moment(meal_record.date).format('YYYY/MM/DD')}`]['calories_intake'] += (item.quantity * diets_by_id[item.id]['calories']['measurement']) / diets_by_id[item.id]['serving']['measurement'];
         })
       }
-      if (meal_record.dinner){
+      if (meal_record.dinner && meal_record.dinner.length > 0){
         meal_record.dinner.forEach(item => {
           graph_object[`${moment(meal_record.date).format('YYYY/MM/DD')}`]['calories_intake'] += (item.quantity * diets_by_id[item.id]['calories']['measurement']) / diets_by_id[item.id]['serving']['measurement'];
         })

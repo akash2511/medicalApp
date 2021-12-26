@@ -5,7 +5,7 @@ module.exports = {
   path: '/api/calories-intake/report/{patient_id}',
   options: {
     tags: ['api'],
-    description: 'Generates calories burnt report',
+    description: 'Generates calories intake report',
     auth: 'jwt',
     plugins: {
       hapiAuthorization: {
