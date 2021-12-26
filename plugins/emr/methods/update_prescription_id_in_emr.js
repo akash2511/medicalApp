@@ -3,7 +3,7 @@
 const EmrModel = require('../schemas/emr');
 
 module.exports = {
-  name: 'update_prescription_id',
+  name: 'update_prescription_id_in_emr',
   method: async (emr_id, prescription_id) => {
     try {
       const filter = {

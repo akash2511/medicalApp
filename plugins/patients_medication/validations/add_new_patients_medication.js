@@ -3,13 +3,11 @@
 const Joi = require('joi');
 
 module.exports = {
-  params: Joi.object({
-    id: Joi.string().required(),
-  }),
   payload: Joi.object({
-    medication_for: Joi.string(),
-    drug_class: Joi.string(),
-    type: Joi.string(),
+    patient_id: Joi.string().required(),
+    medication_for: Joi.string().required(),
+    drug_class: Joi.string().required(),
+    type: Joi.string().required(),
     generic_name: Joi.string(),
     brand_name: Joi.string(),
     description: Joi.string(),

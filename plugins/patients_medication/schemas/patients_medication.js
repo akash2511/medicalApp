@@ -7,6 +7,7 @@ const { Schema } = mongoose;
 
 const schema = new Schema(
   {
+    patient_id: { type: String, required: true},
     medication_for: { type: String, required: true },
     drug_class: { type: String, required: true },
     type: { type: String, required: true },
@@ -61,4 +62,4 @@ const schema = new Schema(
   { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' } }
 );
 
-module.exports = mongoose.model('medication', schema, 'medication');
+module.exports = mongoose.model('patients_medication', schema, 'patients_medication');

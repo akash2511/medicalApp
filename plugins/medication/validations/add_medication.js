@@ -10,7 +10,36 @@ module.exports = {
     generic_name: Joi.string(),
     brand_name: Joi.string(),
     description: Joi.string(),
-    diet_plan_id: Joi.string().required(),
-    self_management_id: Joi.string().required()
+    breakfast: Joi.array().items(Joi.object().keys({
+      diet_id: Joi.string(),
+      servings: Joi.object().keys({
+        measurement: Joi.number(),
+        unit_of_measurement: Joi.string()
+      })
+    })),
+    lunch: Joi.array().items(Joi.object().keys({
+      diet_id: Joi.string(),
+      servings: Joi.object().keys({
+        measurement: Joi.number(),
+        unit_of_measurement: Joi.string()
+      })
+    })),
+    snack: Joi.array().items(Joi.object().keys({
+      diet_id: Joi.string(),
+      servings: Joi.object().keys({
+        measurement: Joi.number(),
+        unit_of_measurement: Joi.string()
+      })
+    })),
+    dinner: Joi.array().items(Joi.object().keys({
+      diet_id: Joi.string(),
+      servings: Joi.object().keys({
+        measurement: Joi.number(),
+        unit_of_measurement: Joi.string()
+      })
+    })),
+    supplement_ids: Joi.array().items(Joi.string()),
+    exercise_ids: Joi.array().items(Joi.string()),
+    sleep_in_min: Joi.number()
   })
 };

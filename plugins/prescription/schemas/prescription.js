@@ -7,7 +7,8 @@ const { Schema } = mongoose;
 
 const schema = new Schema(
   {
-    medication_id: { type: String, required: true },
+    patient_id: { type: String, required: true },
+    patients_medication_id: { type: String, required: true },
     emr_id: { type: String, required: true },
     notes: { type: String, required: true },
     archive: { type: Boolean, default: false }

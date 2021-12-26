@@ -36,7 +36,7 @@ const schema = new Schema(
         quantity: { type: Number, required: false }
       }
     ],
-    supplements: { type: String, required: false },
+    supplements: { type: [String], required: false },
     hydartion_in_litres: { type: Number, required: false },
     date: { type: Date, required: true },
     archive: { type: Boolean, default: false }

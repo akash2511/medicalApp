@@ -7,12 +7,6 @@ module.exports = {
     id: Joi.string().required(),
   }),
   payload: Joi.object({
-    medication_for: Joi.string(),
-    drug_class: Joi.string(),
-    type: Joi.string(),
-    generic_name: Joi.string(),
-    brand_name: Joi.string(),
-    description: Joi.string(),
     breakfast: Joi.array().items(Joi.object().keys({
       diet_id: Joi.string(),
       servings: Joi.object().keys({
