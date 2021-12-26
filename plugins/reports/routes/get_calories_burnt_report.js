@@ -2,7 +2,7 @@
 
 module.exports = {
   method: 'GET',
-  path: '/api/calories-burnt/report/{patient_id}',
+  path: '/api/report/calories-burnt/{patient_id}',
   options: {
     tags: ['api'],
     description: 'Generates calories burnt report',

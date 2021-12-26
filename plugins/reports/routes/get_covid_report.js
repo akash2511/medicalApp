@@ -2,7 +2,7 @@
 
 module.exports = {
   method: 'GET',
-  path: '/api/covid/report/{patient_id}',
+  path: '/api/report/covid/{patient_id}',
   options: {
     tags: ['api'],
     description: 'Generates covid report',

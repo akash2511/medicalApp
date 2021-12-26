@@ -6,7 +6,7 @@ module.exports = async (request, h) => {
   const { params, server } = request;
   const {patient_id} = params;
   try {
-    const self_management_records = server.methods.get_patients_self_management_records(patient_id);
+    const self_management_records = await server.methods.get_patients_self_management_records(patient_id);
     const self_management_records_filtered = self_management_records.slice(-10);
     let graph_object = {};
     self_management_records_filtered.forEach(sm_record => {

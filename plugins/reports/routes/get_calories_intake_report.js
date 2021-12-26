@@ -2,7 +2,7 @@
 
 module.exports = {
   method: 'GET',
-  path: '/api/calories-intake/report/{patient_id}',
+  path: '/api/report/calories-intake/{patient_id}',
   options: {
     tags: ['api'],
     description: 'Generates calories intake report',

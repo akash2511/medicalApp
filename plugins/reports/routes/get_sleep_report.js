@@ -2,7 +2,7 @@
 
 module.exports = {
   method: 'GET',
-  path: '/api/sleep/report/{patient_id}',
+  path: '/api/report/sleep/{patient_id}',
   options: {
     tags: ['api'],
     description: 'Generates sleep report',
