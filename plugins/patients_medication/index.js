@@ -12,5 +12,6 @@ exports.plugin = {
     server.route(require('./routes/get_patients_medication_by_ids'));
     // methods
     server.method(require('./methods/create_patients_medication'));
+    server.method(require('./methods/check_patients_medication'));
   }
 };

@@ -10,7 +10,7 @@ module.exports = {
       if(!medication) throw new Error('Medication not found');
       delete medication._id;
       const uploadObject = Object.assign({}, medication, {patient_id});
-      const patients_medication = PatientsMedicationModel.create(uploadObject);
+      const patients_medication = await PatientsMedicationModel.create(uploadObject);
       return patients_medication;
     } catch (e) {
       throw e;

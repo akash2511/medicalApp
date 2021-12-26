@@ -14,7 +14,7 @@ module.exports = async (request, h) => {
       new Date(a.created_at) - new Date(b.created_at)
     })
     const last_prescription = prescriptions[prescriptions.length - 1];
-    const medication = await server.methods.create_patients_medication(last_prescription.medication_id);
+    const medication = await server.methods.check_patients_medication(last_prescription.medication_id);
     const diet_ids = [];
     if(medication.breakfast.length>0) medication.breakfast.forEach(diet=>diet_ids.push(diet.diet_id));
     if(medication.lunch.length>0) medication.lunch.forEach(diet=>diet_ids.push(diet.diet_id));
