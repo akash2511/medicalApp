@@ -5,16 +5,10 @@ const Boom = require('@hapi/boom');
 
 module.exports = async (request, h) => {
   const { params, payload } = request;
-  let { exercise, sleep_in_min } = payload;
-  exercise = exercise? exercise: [];
   try {
     const filter = {_id: params.id, archive: false};
-    const update = { 
-        $push: { exercise: { $each: exercise}},
-        $set: {sleep_in_min}
-    }
     const options = { useFindAndModify: false, new: true};
-    const record = await SelfManagementRecordModel.findOneAndUpdate(filter, update, options);
+    const record = await SelfManagementRecordModel.findOneAndUpdate(filter, payload, options);
     return {
       statusCode: 200,
       message: `Patient self management record created successfully`,
