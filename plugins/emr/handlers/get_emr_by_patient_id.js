@@ -16,10 +16,10 @@ module.exports = async (request, h) => {
     const last_prescription = prescriptions[prescriptions.length - 1];
     const medication = await server.methods.check_patients_medication(last_prescription.medication_id);
     const diet_ids = [];
-    if(medication.breakfast.length>0) medication.breakfast.forEach(diet=>diet_ids.push(diet.diet_id));
-    if(medication.lunch.length>0) medication.lunch.forEach(diet=>diet_ids.push(diet.diet_id));
-    if(medication.snack.length>0) medication.snack.forEach(diet=>diet_ids.push(diet.diet_id));
-    if(medication.dinner.length>0) medication.dinner.forEach(diet=>diet_ids.push(diet.diet_id));
+    if (medication.breakfast && medication.breakfast.length ? medication.breakfast.length>0 : false) medication.breakfast.forEach(diet=>diet_ids.push(diet.diet_id));
+    if (medication.lunch && medication.lunch.length ? medication.lunch.length>0 : false) medication.lunch.forEach(diet=>diet_ids.push(diet.diet_id));
+    if(medication.snack && medication.snack.length ? medication.snack.length>0 : false) medication.snack.forEach(diet=>diet_ids.push(diet.diet_id));
+    if(medication.dinner && medication.dinner.length ? medication.dinner.length>0 : false) medication.dinner.forEach(diet=>diet_ids.push(diet.diet_id));
     const diets = diet_ids.length > 0? await server.methods.check_diet(diet_ids): [];
     const supplements = await server.methods.check_supplements(medication.supplement_ids);
     const exercises = await server.methods.check_exercise(medication.exercises)
