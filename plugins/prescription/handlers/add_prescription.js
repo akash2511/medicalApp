@@ -10,7 +10,7 @@ module.exports = async (request, h) => {
     const patients_medication = await methods.create_patients_medication(payload.medication_id, emr.patient_id, methods)
     const uploadObject = { 
       patient_id: emr.patient_id,
-      patients_medication_id: patients_medication, 
+      patients_medication_id: patients_medication._id, 
       emr_id: payload.emr_id,
       notes: payload.notes
     }
