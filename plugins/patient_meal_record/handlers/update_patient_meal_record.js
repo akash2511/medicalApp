@@ -13,13 +13,11 @@ module.exports = async (request, h) => {
   try {
     const filter = {_id: params.id, archive: false};
     const update = { 
-        $push: { 
-            breakfast: { $each: breakfast},
-            lunch: { $each: lunch},
-            snack: { $each: snack},
-            dinner: { $each: dinner},
-        },
-        $set: {hydartion_in_litres}
+      breakfast,
+      lunch,
+      snack,
+      dinner,
+      hydartion_in_litres
     }
     const options = { useFindAndModify: false, new: true};
     const record = await MealRecordModel.findOneAndUpdate(filter, update, options);
