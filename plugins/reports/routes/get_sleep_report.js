@@ -2,17 +2,17 @@
 
 module.exports = {
   method: 'GET',
-  path: '/api/diet_plan',
+  path: '/api/sleep/report/{patient_id}',
   options: {
     tags: ['api'],
-    description: 'Get diet plan by ids',
+    description: 'Generates sleep report',
     auth: 'jwt',
     plugins: {
       hapiAuthorization: {
         roles: ['superAdmin', 'user']
       }
     },
-    validate: require('../validations/get_diet_plan_by_ids')
+    validate: require('../validations/get_sleep_report')
   },
-  handler: require('../handlers/get_diet_plan_by_ids')
+  handler: require('../handlers/get_sleep_report')
 };

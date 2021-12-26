@@ -11,7 +11,7 @@ const schema = new Schema(
     name: { type: String, required: true },
     calories_burnt: {
         value: { type: Number, required: true },
-        duration_in_min: { type: String, required: true },
+        duration_in_min: { type: Number, required: true },
     },
     archive: { type: String, default: false }
   },

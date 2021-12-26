@@ -9,13 +9,11 @@ try {
 
   const auth = require('./plugins/auth');
   const diet = require('./plugins/diet');
-  const diet_plan = require('./plugins/diet_plan');
   const emr = require('./plugins/emr');
   const exercises = require('./plugins/exercises');
   const medication = require('./plugins/medication');
   const prescription = require('./plugins/prescription');
   const profile = require('./plugins/profile');
-  const self_management = require('./plugins/self_management');
   const users = require('./plugins/users');
   const vitamins_and_supplements = require('./plugins/vitamins_and_supplements');
   const patient_meal_record = require('./plugins/patient_meal_record');
@@ -24,6 +22,7 @@ try {
   const survey = require('./plugins/survey');
   const survey_questions = require('./plugins/survey_questions');
   const survey_submissions = require('./plugins/survey_submissions');
+  const reports = require('./plugins/reports');
 
   module.exports = {
     server: {
@@ -103,9 +102,6 @@ try {
           plugin: diet
         },
         {
-          plugin: diet_plan
-        },
-        {
           plugin: emr
         },
         {
@@ -119,9 +115,6 @@ try {
         },
         {
           plugin: prescription
-        },
-        {
-          plugin: self_management
         },
         {
           plugin: users
@@ -146,6 +139,9 @@ try {
         },
         {
           plugin: survey_submissions
+        },
+        {
+          plugin: reports
         }
       ]
     }

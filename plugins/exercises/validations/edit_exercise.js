@@ -11,7 +11,7 @@ module.exports = {
     name: Joi.string(),
     calories_burnt: Joi.object().keys({
       value: Joi.number(),
-      duration_in_min: Joi.string()
+      duration_in_min: Joi.number()
     })
   })
 };

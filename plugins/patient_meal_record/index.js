@@ -10,5 +10,7 @@ exports.plugin = {
     server.route(require('./routes/get_patient_meal_record'));
     server.route(require('./routes/get_patient_meal_records_for_doctor'));
     server.route(require('./routes/update_patient_meal_record'));
+    // methods
+    server.method(require('./methods/get_patients_meal_records'));
   }
 };

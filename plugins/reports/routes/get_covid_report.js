@@ -5,14 +5,14 @@ module.exports = {
   path: '/api/covid/report/{patient_id}',
   options: {
     tags: ['api'],
-    description: 'Fetches a survey',
+    description: 'Generates covid report',
     auth: 'jwt',
     plugins: {
       hapiAuthorization: {
         roles: ['superAdmin', 'user']
       }
     },
-    validate: require('../validations/get_survey_by_id')
+    validate: require('../validations/get_covid_report')
   },
-  handler: require('../handlers/get_survey_by_id')
+  handler: require('../handlers/get_covid_report')
 };

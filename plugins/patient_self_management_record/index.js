@@ -10,5 +10,7 @@ exports.plugin = {
     server.route(require('./routes/get_patient_self_management_record_for_doctor'));
     server.route(require('./routes/get_patient_self_management_record'));
     server.route(require('./routes/update_patient_self_management_record'));
+    // methods
+    server.method(require('./methods/get_patients_self_management_records'));
   }
 };
