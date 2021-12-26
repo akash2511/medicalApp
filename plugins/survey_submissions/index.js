@@ -12,5 +12,8 @@ exports.plugin = {
     server.route(require('./routes/edit_survey_submissions'));
     server.route(require('./routes/get_survey_reports'));
     server.route(require('./routes/get_survey_submission_profileId_and_questionId'));
+
+    // methods
+    server.method(require('./methods/get_survey_submissions_by_profile_and_question_ids'));
   }
 };

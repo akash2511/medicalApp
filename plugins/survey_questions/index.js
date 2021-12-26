@@ -13,6 +13,6 @@ exports.plugin = {
     server.route(require('./routes/get_survey_question_by_survey_id'));
 
     // methods
-    server.method(require('./methods/get_survey_questions_by_survey_id'));
+    server.method(require('./methods/get_survey_questions_by_survey_ids'));
   }
 };
