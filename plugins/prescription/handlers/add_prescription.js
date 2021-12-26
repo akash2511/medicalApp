@@ -6,9 +6,10 @@ const Boom = require('@hapi/boom');
 module.exports = async (request, h) => {
   const { payload, server: { methods } } = request;
   try {
-    const patients_medication = methods.create_patients_medication(payload.medication_id, payload.patient_id, functions)
+    const emr = methods.check_emr(payload.emr_id);
+    const patients_medication = methods.create_patients_medication(payload.medication_id, emr.patient_id, functions)
     const uploadObject = { 
-      patient_id: payload.patient_id,
+      patient_id: emr.patient_id,
       patients_medication_id: patients_medication, 
       emr_id: payload.emr_id,
       notes: payload.notes

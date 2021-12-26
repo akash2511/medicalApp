@@ -10,5 +10,6 @@ exports.plugin = {
     server.route(require('./routes/delete_emr'));
     // methods
     server.method(require('./methods/update_prescription_id_in_emr'));
+    server.method(require('./methods/check_emr'));
   }
 };
