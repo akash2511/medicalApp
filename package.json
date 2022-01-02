@@ -4,8 +4,7 @@
   "description": "health app",
   "main": "index.js",
   "scripts": {
-    "dev": "node ./server/index.js",
-    "lint": "prettier . --write"
+    "dev": "node ./server/index.js"
   },
   "repository": {
     "type": "git",
@@ -37,21 +36,5 @@
     "redis": "^3.1.2",
     "underscore": "^1.13.2",
     "uuid": "^8.3.2"
-  },
-  "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.1",
-    "lint-staged": "^12.0.2",
-    "nodemon": "^2.0.15",
-    "prettier": "^2.4.1"
-  },
-  "lint-staged": {
-    "**/*.js": [
-      "prettier --write",
-      "eslint --fix"
-    ]
   }
 }
