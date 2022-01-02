@@ -10,7 +10,7 @@ module.exports = {
         _id: medication_id,
         archive: false
       }
-      const patients_medication = await PatientsMedicationModel.find(filter);
+      const patients_medication = await PatientsMedicationModel.findOne(filter);
       return patients_medication;
     } catch (e) {
       throw e;
