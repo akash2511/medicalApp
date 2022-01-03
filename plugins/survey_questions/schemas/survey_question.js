@@ -21,7 +21,9 @@ const schema = new Schema(
     ],
     score_category: { type: String, required: false },
     weightage: { type: Number, default: 0 },
-    archive: { type: Boolean, default: false },
+    main: { type: Boolean, default: false },
+    order: { type: Number, default: 1 },
+    archive: { type: Boolean, default: false }
   },
   { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' } }
 );

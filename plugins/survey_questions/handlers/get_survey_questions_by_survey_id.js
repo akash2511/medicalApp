@@ -8,6 +8,7 @@ module.exports = async (request, h) => {
   try {
     const filter = { survey_id: params.survey_id, archive: false };
     const surveyquestions = await SurveyQuestionModel.find(filter);
+    surveyquestions.sort((a,b)=> a.order - b.order);
 
     return {
       statusCode: 200,

@@ -18,6 +18,8 @@ module.exports = {
       sub_question: Joi.string()
     })),
     score_category: Joi.string(),
-    weightage: Joi.number()
+    weightage: Joi.number(),
+    main: Joi.boolean(),
+    order: Joi.number()
   })
 };
