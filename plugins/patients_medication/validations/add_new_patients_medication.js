@@ -40,7 +40,7 @@ module.exports = {
       })
     })),
     supplement_ids: Joi.array().items(Joi.string()),
-    exercise_ids: Joi.array().items(Joi.string()),
+    exercises: Joi.array().items(Joi.string()),
     sleep_in_min: Joi.number()
   })
 };
