@@ -33,6 +33,7 @@ module.exports = async (request, h) => {
     let graph_object = {};
     covid_questions.forEach(question => {
       const submission = survey_submission_by_id[question._id];
+      if(!submission) throw new Error('Survey not submitted');
       if(!graph_object[`${moment(submission.timestamps.createdAt).format('YYYY/MM/DD')}`]){
         graph_object[`${moment(submission.timestamps.createdAt).format('YYYY/MM/DD')}`] = {}
       }
