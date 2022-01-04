@@ -21,7 +21,7 @@ module.exports = async (request, h) => {
     const covid_question_ids = [];
     let survey_question_answers_by_id = {};
     covid_questions.forEach(question => {
-      if(type === 'SCALE'){
+      if(question.type === 'SCALE'){
         question.answers.forEach(answer => {
           Object.assign(survey_question_answers_by_id, {[`${question._id}_${answer._id}`]: answer});
         })
