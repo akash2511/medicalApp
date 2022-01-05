@@ -14,7 +14,7 @@ module.exports = {
       weightage: Joi.number(),
       sub_question: Joi.string()
     })),
-    score_category: Joi.string().required(),
+    score_category: Joi.string(),
     weightage: Joi.number(),
     main: Joi.boolean(),
     order: Joi.number()
