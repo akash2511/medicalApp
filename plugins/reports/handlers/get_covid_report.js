@@ -30,16 +30,18 @@ module.exports = async (request, h) => {
     })
     const survey_submissions = await server.methods.get_survey_submissions_by_profile_and_question_ids(patient_id, covid_question_ids);
     const survey_submission_by_id = getByField({data: survey_submissions, field: 'question_id'});
+    if(survey_submissions.length < 1) throw new Error('Survey not submitted');
     let graph_object = {};
     covid_questions.forEach(question => {
-      const submission = survey_submission_by_id[question._id];
-      if(!submission) throw new Error('Survey not submitted');
-      if(!graph_object[`${moment(submission.timestamps.createdAt).format('YYYY/MM/DD')}`]){
-        graph_object[`${moment(submission.timestamps.createdAt).format('YYYY/MM/DD')}`] = {}
-      }
-      if(type === 'SCALE') {
-        graph_object[`${moment(submission.timestamps.createdAt).format('YYYY/MM/DD')}`][question.score_category] = int(survey_question_answers_by_id[`${question._id}_${submission.answers[0]}`]['title']);
-      }
+      const submission = survey_submission_by_id[question._id.toString()];
+      if(submission) {
+        if(!graph_object[`${moment(submission.createdAt).format('YYYY/MM/DD')}`]){
+          graph_object[`${moment(submission.createdAt).format('YYYY/MM/DD')}`] = {}
+        }
+        if(question.type === 'SCALE') {
+          graph_object[`${moment(submission.createdAt).format('YYYY/MM/DD')}`][question.score_category] = parseInt(survey_question_answers_by_id[`${question._id}_${submission.answers[0]}`]['title']);
+        }
+      };
     })
     return {
       statusCode: 201,
