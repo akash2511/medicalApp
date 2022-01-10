@@ -2,7 +2,6 @@
 
 const Boom = require('@hapi/boom');
 const moment = require('moment');
-const getByField = require('../../../utils/get_by_field');
 
 module.exports = async (request, h) => {
   const { params, server } = request;
