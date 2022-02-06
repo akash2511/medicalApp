@@ -6,6 +6,7 @@ exports.plugin = {
   register: (server, options) => {
     // routes
     server.route(require('./routes/add_vitamins_and_supplements'));
+    server.route(require('./routes/add_vitamins_and_supplements_by_csv'));
     server.route(require('./routes/delete_vitamins_and_supplements'));
     server.route(require('./routes/edit_vitamins_and_supplements'));
     server.route(require('./routes/get_vitamins_and_supplements'));
